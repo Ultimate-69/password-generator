@@ -47,4 +47,5 @@ int main()
     }
 
     std::cout << "Your password: " << password << std::endl;
+    std::cin.ignore();
 }
