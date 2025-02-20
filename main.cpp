@@ -47,6 +47,7 @@ int main()
     }
 
     std::cout << "Your password: " << password << std::endl;
+    std::cout << "Press ENTER to exit." << std::endl;
     std::cin.sync();
     std::cin.ignore();
 }
