@@ -1,5 +1,6 @@
 #include <random>
 #include <iostream>
+#include <cctype>
 
 int main()
 {
@@ -20,10 +21,15 @@ int main()
     try
     {    
         std::cin >> length;
+        if (!std::isdigit(length))
+        {
+            throw std::invalid_argument("Password length is not a number.");
+        }
     }
     catch(const std::exception& e)
     {
-        std::cout << "An error was encountered when getting the password length.";
+        std::cout << "An error occurred when getting the password length.";
+        return 1;
     }
 
     std::string password;
@@ -50,4 +56,5 @@ int main()
     std::cout << "Press ENTER to exit." << std::endl;
     std::cin.sync();
     std::cin.ignore();
+    return 0;
 }
